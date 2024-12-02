@@ -1,0 +1,228 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* menulist */
+.product-card img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-card h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.product-card button {
+    margin-top: 10px;
+    background-color: #48914a;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-card button:hover {
+    background-color: #3a773c;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.cart-container {
+    max-width: 600px;
+    position: absolute;
+    padding: 20px;
+    top: 25%;
+    left: 5%;
+    border: 1px solid #7e1f1f;
+    border-radius: 20px;
+}
+
+.cart-container h2 {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.heading1 {
+    float: left;
+    display: block;
+    text-decoration: none;
+    color: transparent;
+    background: linear-gradient(45deg, #00b09b, #523dc9, red);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.image {
+    width: 100%;
+    height: 300px;
+}
+
+.header-content {
+    position: absolute;
+    margin: -15rem 0 0 3rem;
+}
+
+.header-content h4 {
+    font-weight: bold;
+}
+
+.header-content h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: palevioletred;
+    font-family: cursive;
+    margin-top: -15px;
+}
+
+.header-content p {
+    margin-top: -10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.header-content button {
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+.header-content button:hover {
+    background-color: rgb(220, 77, 77);
+}
+
+/* index */
+.navbar-brand {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Blog Container */
+.container-blog {
+    margin: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-blog h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Blog Content */
+.container-content1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.image-blog {
+    flex: 1 1 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.blog-text {
+    flex: 1 1 100%;
+}
+
+.blog-text b {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.blog-text .fa-calendar-days {
+    margin-right: 5px;
+    color: #555;
+}
+
+.blog-text p {
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 1rem 0;
+    text-align: justify;
+}
+
+@media screen and (min-width:100px) and (max-width:477px) {
+    #cont .row {
+        display: inline;
+
+    }
+
+    #cont #one {
+        margin-top: 450px;
+
+    }
+.cart-container{
+    margin-left: 15%;
+}
+}
+
+/* Responsive Adjustments */
+@media screen and (min-width: 768px) {
+    .container-content1 {
+        flex-wrap: nowrap;
+
+    }
+
+    .image-blog {
+        flex: 1 1 40%;
+        max-width: 40%;
+    }
+
+    .blog-text {
+        flex: 1 1 60%;
+        max-width: 60%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container-content1 {
+        gap: 40px;
+    }
+}
+
+/* collection */
+
+.container {
+    margin-top: 30px;
+}
+
+/* Optional: Style the videos to fit the container */
+.col-lg-4 video {
+    width: 100%;
+    height: 450px;
+}

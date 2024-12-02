@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+  <!-- font-awesome icons css  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+
+  <link href="./bootstrap-5.0.2-dist/css/bootstrap-grid.min.css" rel="stylesheet">
+  <link href="./bootstrap-5.0.2-dist/css/bootstrap-icons.css" rel="stylesheet">
+  <link href="./bootstrap-5.0.2-dist/css/boxcons.min.css" rel="stylesheet">
+
+  <!-- time -->
+  <script type="text/javascript">
+    function pageLoad() {
+      update();
+      setInterval("update();", 1000);
+    }
+    function update() {
+      var date = new Date();
+      var mn = date.getMonth() + 1;
+      document.getElementById("dt").innerHTML = date.getDate() + "/" + mn + "/" + date.getFullYear();
+      document.getElementById("time").innerHTML = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    }
+
+  </script>
+
+  <!-- css -->
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Potta+One&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      background: #e0e0e077;
+    }
+
+    .container {
+      display: flex;
+      align-items: left;
+      justify-content: left;
+      flex-wrap: wrap;
+      margin: 3rem 0rem;
+    }
+
+    .container div img {
+      border-radius: 50px;
+      opacity: 0%;
+
+    }
+
+    .card {
+      border-radius: 5px;
+      width: 250px;
+      padding: 15px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #e0e0e0;
+      box-shadow: 5px 5px 10px #c3c3c3, -5px -5px 10px #fdfdfd;
+    }
+
+    .profile_img {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      background: #e0e0e0;
+      box-shadow: 5px 5px 10px #afafaf, -5px -5px 10px #329d7d96;
+    }
+
+    .card h4 {
+      margin-top: 10px;
+      font-size: 20px;
+    }
+
+    .card h6 {
+      font-size: 12px;
+    }
+
+    .card p {
+      font-size: 12px;
+      text-align: center;
+      box-shadow: 3px 3px 7px #d8242478, -3px -3px 7px #78a5aa;
+    }
+
+    .social_icons {
+      margin: 10px 0;
+      display: flex;
+    }
+
+    .social_icons li {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 6px;
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+      background: #e0e0e0;
+      box-shadow: 3px 3px 7px #afafaf, -3px -3px 7px #78a5aa;
+    }
+
+    .social_icons li a i {
+      font-size: 15px;
+    }
+
+    .btn {
+      font-size: 15px;
+      margin: 12px 4px;
+      padding: 5px 11px;
+      border: none;
+      cursor: progress;
+      border-radius: 17px;
+      background: #e0e0e0;
+      box-shadow: 10px 10px 10px #c1c1c1, -10px -10px 10px #88b3ce55;
+    }
+
+    /* section */
+    .div section {
+      margin-left: 20px;
+      padding: 60px 0;
+      overflow: hidden;
+    }
+
+    .section-title {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      position: relative;
+      color: #45505b;
+    }
+
+    .section-title h2::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 120px;
+      height: 1px;
+      background: #ddd;
+      bottom: 1px;
+      left: calc(50% - 60px);
+    }
+
+    .section-title h2::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: #0563bb;
+      bottom: 0;
+      left: calc(50% - 20px);
+    }
+
+    .section-title p {
+      margin-bottom: 0;
+    }
+
+    /* navigation */
+
+    .floating-nav {
+      list-style: none;
+      position: fixed;
+      right: 30px;
+      background-repeat: no-repeat;
+    }
+
+
+    .nav-link {
+      position: relative;
+      font-size: 20px;
+      background: #404040;
+      margin: 10px 0;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
+      transition: 0.5s ease;
+    }
+
+    .nav-link:hover {
+      background-color: #facc15;
+      color: white;
+    }
+
+    .nav-link::after {
+      content: attr(data-text);
+      position: absolute;
+      left: -20px;
+      background: #facc15;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      width: 0rem;
+      height: 100%;
+      border-radius: 25px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover::after {
+      width: 6rem;
+      left: -105px;
+      opacity: 1;
+    }
+
+    .active {
+      background-color: #facc15;
+      color: white;
+    }
+
+    /* img */
+  </style>
+  <title>Profile_Card</title>
+</head>
+
+<body onload="pageLoad()">
+  <h1 style="text-align: center; margin-top: 20px; font-weight: bold; font-family: cursive;"> -- SHIVARTH --
+    <p style="text-align: right; padding-right: 31.5%; font-size: 25px;">Portfolio</p>
+  </h1>
+
+  <div class="container">
+    <div class="card">
+
+      <label id="dt" style=" font-family: 'Times New Roman', Times, serif; font-weight: bold;">
+      </label>
+
+      <div class="profile_img" style="background: url('./shiv.JPG') center / cover">
+        <img src="https://hdwpro.com/wp-content/uploads/2016/04/Nice-Facebook-Timeline-Cover.jpg" height="100px"
+          width="100%" alt="no-image" />
+      </div>
+      <h4 style="font-family: 'Times New Roman', Times, serif; font-weight: bold; font-style:oblique;"> Shivarth </h4>
+      <h6>Shivarth.drona@gmail.com</h6>
+      <p style="font-style: italic; font-weight: bold;">Full Stack Web Developer</p>
+      <ul class="social_icons">
+        <li>
+          <a href="https://www.facebook.com/shivarth143?mibextid=ZbWKwL" class="bx bxl-facebook" target="_blank">
+            <i class="fab fa-facebook-f" style="color: blue;"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/shivarth_4157/" class="bx bxl-instagram" target="_blank"
+            style="color: deeppink;">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/shivarth-drona-7b7a9b141?trk=contact-info" class="bx bxl-linkedin"
+            target="_blank">
+            <i class="fab fa-linkedin" style="color: deepskyblue;"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.snapchat.com/add/shivarth1439?share_id=1wjS82ammUE&locale=en-IN" class="bx bxl-snapchat"
+            target="_blank">
+            <i class="fab fa-snapchat" style="color: yellowred"></i>
+          </a>
+        </li>
+      </ul>
+
+      <!-- buttons -->
+      <div class="buttons">
+        <button class="btn" onclick="">
+          Message
+        </button>
+        <button class="btn" onclick="">
+          Follow
+        </button>
+
+      </div>
+      <label id="time" style=" font-family: 'Times New Roman', Times, serif; font-weight: bold  ;"></label>
+    </div>
+
+
+    <!-- navigation -->
+    <section>
+      <ul class="floating-nav">
+        <li>
+          <a href="#" data-text="Home" class="nav-link active"><i class="fas fa-home"></i></a>
+        </li>
+        <li>
+          <a href="#fswd" data-text="About" class="nav-link"><i class="fa- fa-accessible-icon"></i></a>
+        </li>
+        <li>
+          <a href="#fswd2" data-text="Resume" class="nav-link"><i class="fas fa-user"></i></a>
+        </li>
+        <li>
+          <a href="#fswd3" data-text="Skills" class="nav-link"><i class="fas fa-suitcase"></i></a>
+        </li>
+        <li>
+          <a href="#fswd4" data-text="Contact" class="nav-link"><i class="fas fa-phone-alt"></i></a>
+        </li>
+        <li>
+          <a href="#fswd5" data-text="Socail-media" class="nav-link"><i class="fa-solid fa-hashtag"></i></a>
+        </li>
+      </ul>
+    </section>
+  </div>
+  <div></div>
+  <div></div>
+  <br><br><br><br><br>
+  <!-- sec -->
+  <section id="fswd" style="color: blueviolet;">
+    <div>
+
+      <div class="section-title">
+        <h2>About</h2>
+        <p
+          style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: #6427c0;">
+          I'm Dronachary Shivarth <br> pursing B.Sc DataScience degree final year in Nishitha Degree College,
+          Nizamabad, Telangana. <br>
+        </p>
+        <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Web Developer</h3>
+        <p
+          style="color: blueviolet; font-size: 20px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 300;">
+          “Learning to write programs stretches your mind, and helps you think better,
+          creates a way of thinking about things that I think is helpful in all domains.”
+        </p>
+
+        <div class="row">
+          <h3
+            style="color: #9d1d5bb5; font-style: oblique; font-family: 'Times New Roman', Times, serif; font-weight: bold;">
+            Bio-Data
+          </h3>
+          <div class="col-lg-6">
+
+            <ul>
+              <li>
+                <strong>Birthday:</strong>
+                <span style="color:rgb(105, 7, 7); font-size: 15px;">9 jan 2001</span>
+              </li>
+              <li> <strong>Phone:</strong> <span style="color:rgb(105, 7, 7); font-size: 15px;">+91 7981502710</span>
+              </li>
+              <li></i> <i class="bi bi-geo-alt-fill"></i><strong>City:</strong> <span
+                  style="color:rgb(105, 7, 7); font-size: 15px;">Telangana, INDIA</span></li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <ul>
+              <li></i> <strong>Age:</strong> <span style="color:rgb(105, 7, 7);">22</span></li>
+              <li> <strong>Degree:</strong> <span style="color:rgb(105, 7, 7);">Degree</span></li>
+              <li> <strong>Email:</strong> <span style="color:rgb(105, 7, 7);">shivarth.drona@gmail.com</span></li>
+            </ul>
+          </div>
+        </div>
+        <p
+          style="color:rgb(35, 3, 3); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 20px;">
+          - To enrich my knowledge through learning and to utilize my technical skills & <br>
+          Behaviour skills for development of Organisation and to enrich <br>
+          my knowledge as well which would help my future.
+        </p>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div></div>
+    <div></div>
+    <br><br><br><br><br>
+  </section>
+  <!-- 2sec -->
+  <section id="fswd2" style="color: rgb(84, 197, 42);">
+    <div>
+      <h1 style="color: rgba(11, 11, 11, 0.182);">Resume</h1>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <br><br>
+      <div>
+        <br><br>
+      </div>
+    </div>
+  </section>
+  <!-- 3sec -->
+  <section id="fswd3" style="color: rgb(226, 43, 192);">
+    <div>
+      <h1 style="color: royalblue;">Skills</h1>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <br><br><br><br><br><br>
+    </div>
+  </section>
+  <!-- 4sec -->
+  <section id="fswd4" style="color: rgba(25, 15, 226, 0.833);">
+    <div>
+      <h1 style="color: rgb(226, 43, 192);">Contact</h1>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <br><br><br><br><br><br>
+    </div>
+  </section>
+  <!-- 5sec -->
+  <section id="fswd5" style="color: rgb(4, 15, 29);">
+    <div>
+      <h1 style="color: #facc15;">Source-media</h1>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <div>
+        We often see in statistics published across the internet numbers that seem to contradict the “wholeness” of
+        people. For example, “the average family size is 3.1”. It should be fairly clear that it is impossible to have
+        .1 of a person, but this number is just an average. The average number of cars per household is calculated by
+        adding up the total number of cars and dividing by the number of households. Once we divide we are no longer
+        working with natural numbers. Rather, we are left with a real number, in this case a fraction.
+      </div>
+      <br><br><br><br><br><br>
+    </div>
+  </section>
+
+
+
+
+</body>
+
+</html>

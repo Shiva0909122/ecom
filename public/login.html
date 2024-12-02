@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <img src="./Assets/logo.png" alt="" class="logo1">
+        <h1 class="welcome">Welcome back</h1>
+        <p class="details">Glad to see you again 👋 <br>
+            Login to your account below</p>
+        <form action="/login" method="POST">
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password" required><br>
+                </div>
+                <div class="form-group">
+                    <input type="reset" value="Cancel">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Login">
+                </div>
+            </div>
+        </form>
+        <p class="login">Dont have an account? <a href="./index.html">Sign up for free</a></p>
+    </div>
+
+
+  
+    
+</body>
+
+</html>

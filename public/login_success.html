@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>E-commerce Website</title>
+</head>
+
+<body>
+    <!-- navbar sectioin -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand text-white" href="login_success.html">AS Super Grocery Mart</a>
+            <!-- Toggle button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="login_success.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="menu_list.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="login.html">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="index.html">SignUp</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- header section -->
+    <div class="header">
+        <img src="https://images.pexels.com/photos/349610/pexels-photo-349610.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="heading" class="image">
+        <div class="header-content">
+            <h4>Buy Our Fresh </h4>
+            <h3> Grocery Products!</h3>
+            <p>Here You can find the fresh and varities of food.</p>
+            <a href="./menu_list.html"><button>Shop Now </button></a>
+        </div>
+    </div>
+
+    <!-- Our Blog -->
+    <div class="container-blog">
+        <h1> Our Blog </h1>
+        <div class="container-content1">
+            <img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="blog image" class="image-blog">
+            <b>Caramel Chocolate Cake</b>
+            <i class="fa-regular fa-calendar-days"></i>
+            <div id="currentDate"></div>
+            <p>The foundation of the Caramel Chocolate Cake is moist and tender chocolate cake layers. <br> These layers
+                are
+                typically made with a combination of flour, cocoa powder, sugar, eggs, milk, and other ingredients.
+                <br>The
+                result is a deeply chocolatey and flavorful cake that serves as the base for the dessert.
+                <br>
+                One of the star elements of this cake is the caramel sauce. <br>The caramel is made by melting sugar
+                until it reaches a rich amber color, then combining it with butter, heavy cream, vanilla extract, and a
+                pinch of salt. The result is a smooth and velvety caramel sauce that adds sweetness, depth, and a
+                luxurious touch to each bite.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const currentDate = new Date();
+        const formattedDate = `${currentDate.toLocaleString('en-US', { weekday: 'long' })}, ${currentDate.toLocaleString('en-US', { month: 'long' })} ${currentDate.getDate()}, ${currentDate.getFullYear()}`;
+        document.getElementById('currentDate').textContent = formattedDate;
+    </script>
+    <!-- collection -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <video class="video-player" width="640" height="360" controls>
+                    <source src="./Assets/food.mp4" type="video/mp4">
+                    
+                </video>
+            </div>
+            <div class="col-lg-4">
+                <video class="video-player" width="640" height="360" controls>
+                    <source src="./Assets/food.mp4" type="video/mp4">
+                   
+                </video>
+            </div>
+            <div class="col-lg-4">
+                <video class="video-player" width="640" height="360" controls>
+                    <source src="./Assets/food.mp4" type="video/mp4">
+                    
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var videoPlayers = document.querySelectorAll('.video-player');
+
+            videoPlayers.forEach(function (player) {
+                player.addEventListener('play', function () {
+                    // Pause all other videos when one is played
+                    videoPlayers.forEach(function (otherPlayer) {
+                        if (otherPlayer !== player && !otherPlayer.paused) {
+                            otherPlayer.pause();
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <footer>
+        <p>&copy; <span id="copyrightYear"></span> AS Super Grocery Mart. <br> All rights reserved</p>
+    </footer>
+
+    <script>
+        const currentYear = new Date().getFullYear();
+        document.getElementById('copyrightYear').textContent = currentYear;
+    </script>
+</body>
+
+</html>

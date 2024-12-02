@@ -1,0 +1,166 @@
+/* index .html*/
+/* form */
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    flex: 1 1 calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    flex: 1 1 100%;
+}
+
+.form-group input[type="reset"] {
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    flex: 1 1 100%;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #4df00c;
+}
+
+.form-group input[type="reset"]:hover {
+    background-color: #ee4108;
+    color: #fff;
+}
+
+.login {
+    text-align: center;
+    font-weight: 600;
+    font-family: serif;
+}
+
+.login a {
+    text-decoration: none;
+}
+
+.container {
+    height: 500px;
+    width: 850px;
+    border-radius: 10px;
+    border: 1px solid saddlebrown;
+    margin: auto;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.signup {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+    text-align: center;
+    margin-top: -5%;
+}
+
+.details {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px;
+    text-align: center;
+}
+
+@media screen and (min-width:300px) and (max-width:476px) {
+    .form-container {
+        display: inline;
+    }
+
+    .logo,
+    .logo1 {
+        margin-left: 40%;
+
+    }
+
+    .signup {
+        margin-top: 5px;
+    }
+
+    .form-group {
+        max-width: 350px;
+    }
+
+    .container {
+        height: fit-content;
+        width: 90%;
+        border-radius: 10px;
+        border: 1px solid saddlebrown;
+        margin: auto;
+    }
+
+    label,
+    input {
+
+        margin: 2%;
+    }
+
+}
+
+@media screen and (min-width:477px) and (max-width:876px) {
+
+    .logo,
+    .logo1 {
+        margin-left: 45%;
+
+    }
+
+    .signup {
+        margin-top: 5px;
+    }
+
+    .form-group {
+        max-width: 350px;
+    }
+
+    .container {
+        height: fit-content;
+        width: 90%;
+        border-radius: 10px;
+        border: 1px solid saddlebrown;
+        margin: auto;
+    }
+
+}
+
+/* login.html */
+.logo1 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 50%;
+    margin-top: 2.5%
+}
+
+.welcome {
+    font: 2.5rem sans-serif;
+    text-align: center;
+    font-weight: 500;
+}

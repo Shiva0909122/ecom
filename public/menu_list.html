@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>E-commerce Products</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand text-white" href="login_success.html">AS Super Grocery Mart</a>
+            <!-- Toggle button for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="login_success.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="menu_list.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="login.html">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="index.html">SignUp</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- list -->
+    <h1 class="heading1">Available Products <img src="https://cdn-icons-png.flaticon.com/512/3724/3724788.png" alt=""
+            height="35px"></h1>
+    <div class="cart-container">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <!-- payment integration need to be done -->
+        <a href="" style="margin-left:30%" class="buynow"><button>Buy Now</button></a>
+    </div>
+    <div class="container my-4" id="cont">
+        <div class="row g-3">
+            <!-- Product Card 1 -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" id="one">
+                <div class="product-card p-3 border">
+                    <img src="https://images.pexels.com/photos/46174/strawberries-berries-fruit-freshness-46174.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Product 1">
+                    <h2>Strawberries</h2>
+                    <p>Description: Juicy, vibrant, and sweet strawberries are a perfect treat for any occasion. Packed
+                        with antioxidants and vitamins, they are great for snacking, smoothies, or desserts.
+
+                    </p>
+                    <p>Price: ₹150 per kg
+
+                    </p>
+                    <button onclick="addToCart('strawberries')">Add to Cart <i
+                            class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <!-- Product Card 2 -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card p-3 border">
+                    <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Product 2">
+                    <h2>Cake</h2>
+                    <p>Description: A rich, fluffy cake with a delightful taste that melts in your mouth. Perfect for
+                        celebrations, tea-time snacks, or a little indulgence anytime.
+
+                    </p>
+                    <p>Price: ₹500 per cake
+
+                    </p>
+                    <button onclick="addToCart('cake')">Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <!-- Product Card 3 -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card p-3 border">
+                    <img src="https://images.pexels.com/photos/4033112/pexels-photo-4033112.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Product 3">
+                    <h2>Tomato</h2>
+                    <p>Description: Fresh, plump tomatoes full of flavor and nutrients. Perfect for salads, sauces,
+                        soups, or as a healthy addition to your meals.
+
+                    </p>
+                    <p>Price: ₹40 per kg
+
+                    </p>
+                    <button onclick="addToCart('tomato')">Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <!-- Product Card 4 -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card p-3 border">
+                    <img src="https://images.pexels.com/photos/2985167/pexels-photo-2985167.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Product 4">
+                    <h2>Eggs</h2>
+                    <p>Description: Fresh farm eggs, rich in protein and essential nutrients. A versatile kitchen staple
+                        for baking, breakfasts, or hearty meals.
+
+                    </p>
+                    <p>Price: ₹60 per dozen
+
+                    </p>
+                    <button onclick="addToCart('eggs')">Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <!-- More Product Cards -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card p-3 border">
+                    <img src="https://images.pexels.com/photos/3737617/pexels-photo-3737617.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Product 5">
+                    <h2>Oranges</h2>
+                    <p>Description: Sweet and tangy oranges bursting with flavor and loaded with Vitamin C. A healthy
+                        snack or an excellent addition to your juice recipes.
+
+                    </p>
+                    <p>Price: ₹80 per kg
+
+                    </p>
+                    <button onclick="addToCart('oranges')">Add to Cart <i
+                            class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card p-3 border">
+                    <img src="https://images.pexels.com/photos/2067631/pexels-photo-2067631.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Product 6">
+                    <h2>Bread</h2>
+                    <p> Description: Soft and fluffy fresh-baked bread, perfect for sandwiches, toast, or pairing with
+                        soups and spreads.</p>
+                    <p>Price: ₹80 per loaf
+
+                    </p>
+
+                    <button onclick="addToCart('bread')">Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card p-3 border">
+                    <img src="https://images.pexels.com/photos/799273/pexels-photo-799273.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Product 7">
+                    <h2>Milk</h2>
+                    <p>Description: Fresh, creamy milk rich in calcium and essential nutrients. A healthy and delicious
+                        addition to your daily diet.
+
+                    </p>
+                    <p>
+                        Price: ₹25 per liter
+
+                    </p>
+                    <button onclick="addToCart('milk')">Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card p-3 border">
+                    <img src="https://images.pexels.com/photos/821365/pexels-photo-821365.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Product 8">
+                    <h2>Cheese</h2>
+                    <p>Description: Smooth and creamy cheese with a rich flavor. Perfect for sandwiches, pizzas, or as a
+                        topping for your favorite dishes.
+
+                    </p>
+                    <p>
+                        Price: ₹200 per 200 grams
+
+
+                    </p>
+                    <button onclick="addToCart('cheese')">Add to Cart <i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p class="footer">&copy; <span id="copyrightYear"></span> AS Super Grocery Mart. <br> All rights reserved.</p>
+    </footer>
+
+    <script>
+        function addToCart(productName) {
+            alert(productName + " has been added to your cart!");
+        }
+    </script>
+    <script>
+        const cartItemsList = document.getElementById('cart-items');
+        const addedProducts = new Set();
+
+        function addToCart(productId) {
+            const productName = `${productId} is added`;
+
+            // Check if the product is already in the cart
+            if (addedProducts.has(productId)) {
+                alert(`Product ${productId} is already in the cart.`);
+                return;
+            }
+
+            // Add the product to the cart
+            addedProducts.add(productId);
+
+            const listItem = document.createElement('li');
+            listItem.textContent = productName;
+
+            cartItemsList.appendChild(listItem);
+        }
+
+    </script>
+
+
+
+    <script>
+        // Get the current year
+        const currentYear = new Date().getFullYear();
+
+        // Update the content of the span element with the current year
+        document.getElementById('copyrightYear').textContent = currentYear;
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

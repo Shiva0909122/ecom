@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<!-- https://dribbble.com/shots/22897801-Merlin-Login-Signup -->
+
+<body>
+    <div class="container">
+        
+            <img src="./Assets/logo.png" alt="" class="logo">
+            <h2 class="signup">Sign Up</h2>
+            <p class="details">Enter your details below to create your account and get started.</p>
+            <form action="/sign_up" method="POST">
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="example@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date of Birth:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input type="text" id="phone" name="phone" required placeholder="+91 7845127845">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required placeholder="Enter your password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password:</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required
+                            placeholder="Re-enter your password">
+                    </div>
+                    <div class="form-group">
+                        <input type="reset" value="Cancel">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Confirm">
+                    </div>
+                </div>
+            </form>
+            <p class="login">Already have an account? <a href="login.html">Login</a></p>
+        
+    </div>
+
+    
+</body>
+
+</html>
