@@ -7,54 +7,61 @@
     <title>Sign Up</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<!-- https://dribbble.com/shots/22897801-Merlin-Login-Signup -->
 
 <body>
     <div class="container">
-        
-            <img src="./Assets/logo.png" alt="" class="logo">
-            <h2 class="signup">Sign Up</h2>
-            <p class="details">Enter your details below to create your account and get started.</p>
-            <form action="/sign_up" method="POST">
-                <div class="form-container">
-                    <div class="form-group">
-                        <label for="name">Full Name:</label>
-                        <input type="text" id="name" name="name" required placeholder="Enter your name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required placeholder="example@gmail.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="date">Date of Birth:</label>
-                        <input type="date" id="date" name="date" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone:</label>
-                        <input type="text" id="phone" name="phone" required placeholder="+91 7845127845">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" required placeholder="Enter your password">
-                    </div>
-                    <div class="form-group">
-                        <label for="confirm-password">Confirm Password:</label>
-                        <input type="password" id="confirm-password" name="confirm-password" required
-                            placeholder="Re-enter your password">
-                    </div>
-                    <div class="form-group">
-                        <input type="reset" value="Cancel">
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Confirm">
-                    </div>
+        <img src="./Assets/logo.png" alt="Logo" class="logo">
+        <h2 class="signup">Sign Up</h2>
+        <p class="details">Enter your details below to create your account and get started.</p>
+        <form action="/signup_success.html" method="POST" id="signup-form">
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
                 </div>
-            </form>
-            <p class="login">Already have an account? <a href="login.html">Login</a></p>
-        
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="example@gmail.com" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+                </div>
+                <div class="form-group">
+                    <label for="date">Date of Birth:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+91 7845127845" pattern="^\+91 \d{10}$">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password" minlength="8">
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required placeholder="Re-enter your password">
+                </div>
+                <div class="form-group">
+                    <input type="reset" value="Cancel">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Confirm">
+                </div>
+            </div>
+        </form>
+        <p class="login">Already have an account? <a href="login.html">Login</a></p>
     </div>
 
-    
+    <script>
+        // Password matching check
+        document.getElementById("signup-form").addEventListener("submit", function(event) {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm-password").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+    </script>
 </body>
 
 </html>
